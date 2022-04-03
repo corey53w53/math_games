@@ -22,8 +22,7 @@ answer=r.randint(1,highest_num)
 tries=calc_tries(highest_num)
 handicap=3-difficulty
 tries+=handicap
-print(tries)
-print(f'I have picked a number from 1 to {highest_num}')
+print(f'I have picked a number from 1 to {highest_num}. After each guess I will tell you if your guess wwas too low or too high.')
 while tries>0:
     guess=int(input("Enter your guess:\n"))
     tries-=1
