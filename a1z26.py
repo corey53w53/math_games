@@ -1,12 +1,11 @@
 from random import *
 import time
-enum_list=list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))
-enum_list.extend([(l[1],l[0]) for l in enum_list])
+enum_list=dict(list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))+[(l[1],l[0]) for l in list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))])
 qs_answered, correct, incorrect_list = 0,0,[]
-time_limit=60
+time_limit=15
 start_time=time.time()
 while time.time()-start_time<time_limit:
-    c=choice(enum_list)
+    c=choice(list(enum_list.items()))
     print("\n"*20)
     print(str(c[0])+"\n")
     time_diff=time.time()-start_time
