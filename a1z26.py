@@ -2,24 +2,18 @@ from random import *
 import time
 enum_list=list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))
 enum_list.extend([(l[1],l[0]) for l in enum_list])
-qs_answered, correct, time_limit = 0,0,3
+qs_answered, correct, incorrect_list = 0,0,[]
+time_limit=60
 start_time=time.time()
-incorrect_list=[]
 while time.time()-start_time<time_limit:
     c=choice(enum_list)
     print("\n"*20)
     print(str(c[0])+"\n")
     time_diff=time.time()-start_time
     print(f'You have {round(time_limit-time_diff,2)} seconds left')
-    if input()==str(c[1]):
-        if time.time()-start_time<time_limit: 
-            correct+=1
-            qs_answered+=1
-    else: 
-        if time.time()-start_time<time_limit: 
-            qs_answered+=1
-            incorrect_list.append(c)
-    time_diff=time.time()-start_time
+    if input()==str(c[1]) and time.time()-start_time<time_limit: correct+=1
+    elif time.time()-start_time<time_limit: incorrect_list.append(c)
+    if time.time()-start_time<time_limit: qs_answered+=1
 print("\n"*20)
 if qs_answered: print(f'After {time_limit} seconds, your average answer-per-second is {round(time_diff/qs_answered,3)}.')
 if correct: print(f'Your average correct-answer-per-second is {round(time_diff/correct,3)}.')
