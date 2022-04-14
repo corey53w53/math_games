@@ -9,7 +9,8 @@ enum_list.extend(letter_first)
 start_time=time.time()
 qs_answered=0
 correct=0
-while True:
+time_limit=6
+while time.time()-start_time<time_limit:
     c=choice(enum_list)
     print(c[0])
     i=input()
@@ -21,3 +22,6 @@ while True:
         print("incorrect")
     time_diff=time.time()-start_time
     print(f'You take {time_diff/qs_answered} seconds on average')
+
+print(f'After {time_limit} seconds, your average answers per second is ' 
+    f'{round(time_diff/qs_answered,3)}, and you answered {correct}/{qs_answered} questions correctly.')
