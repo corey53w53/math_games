@@ -1,9 +1,4 @@
 from random import *
-import time
-
-def randq():
-    return choice(list(dict(list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))+[(l[1],l[0]) for l in list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))]).items()))
-print(randq())
 d=dict(list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))+[(l[1],l[0]) for l in list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))])
 i="corey wang"
 s=""
