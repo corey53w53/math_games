@@ -11,8 +11,10 @@ def convert_to_a1z26(i):
     return s
 def convert_to_num(i):
     s=""
-    for c in i.split():
-        if c in letter_to_num: s+=str(d[c])
+    i=i.split()
+    print(i)
+    for c in i:
+        if c in num_to_letter: s+=str(d[c])
         else: s+=c
         s+=" "
     return s
