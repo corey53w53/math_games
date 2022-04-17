@@ -5,6 +5,16 @@ def randq():
     return choice(list(dict(list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))+[(l[1],l[0]) for l in list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))]).items()))
 print(randq())
 d=dict(list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))+[(l[1],l[0]) for l in list(enumerate(list("abcdefghijklmnopqrstuvwxyz"),1))])
+i="corey wang"
+s=""
+for c in i:
+    if c in d:
+        s+=str(d[c])
+    else:
+        s+=c
+    s+=" "
+print(s)
+
 
 # time_limit=15
 # start_time=time.time()
